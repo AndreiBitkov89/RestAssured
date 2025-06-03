@@ -42,4 +42,12 @@ public class UserController {
                 .when()
                 .delete("/users/{id}", id);
     }
+
+    @Step("Update user by id: {id}")
+    public Response updateUser(int id, User user) {
+        return baseRequest()
+                .body(user)
+                .when()
+                .put("/users/{id}", id);
+    }
 }

@@ -40,7 +40,7 @@ public class UserTests {
 
     @Test
     public void createNotUniqueUserTest() {
-        User user = new User("Tenali Ramakrishna", "unique_" + System.currentTimeMillis() + "@example.com", "male", "active");
+        User user = UserGenerator.generateRandomUser();
 
         userController.createUser(user).then().statusCode(201);
 

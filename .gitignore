@@ -5,6 +5,7 @@ build/
 !**/src/test/**/build/
 .idea/
 gradle/
+allure-results/
 
 ### IntelliJ IDEA ###
 .idea/modules.xml

@@ -1,37 +1,45 @@
 package controllers;
 
+import io.qameta.allure.Step;
+import io.restassured.http.ContentType;
 import io.restassured.response.Response;
+import io.restassured.specification.RequestSpecification;
 import models.User;
 
 import static io.restassured.RestAssured.given;
 
 public class UserController {
-    private final String baseUrl = "https://gorest.co.in/public/v2";
 
-    public Response createUser(User user) {
+    private static final String BASE_URL = "https://gorest.co.in/public/v2";
+    private static final String TOKEN = "Bearer d86df00b860fd143f8bdb15828c4a6580c31a8f4422316c18d6e433c944f8420";
+
+    private static RequestSpecification baseRequest() {
         return given()
-                .baseUri(baseUrl)
-                .header("Content-Type", "application/json")
-                .header("Accept", "application/json")
-                .header("Authorization", "Bearer d86df00b860fd143f8bdb15828c4a6580c31a8f4422316c18d6e433c944f8420")
+                .baseUri(BASE_URL)
+                .contentType(ContentType.JSON)
+                .accept(ContentType.JSON)
+                .header("Authorization", TOKEN);
+    }
+
+    @Step("Create user: {user}")
+    public Response createUser(User user) {
+        return baseRequest()
                 .body(user)
                 .when()
                 .post("/users");
     }
 
-    public Response deleteUser(int id) {
-        return given()
-                .baseUri(baseUrl)
-                .header("Authorization", "Bearer d86df00b860fd143f8bdb15828c4a6580c31a8f4422316c18d6e433c944f8420")
+    @Step("Get user by id: {id}")
+    public Response getUser(int id) {
+        return baseRequest()
                 .when()
-                .delete("/users/" + id);
+                .get("/users/{id}", id);
     }
 
-    public Response getUser(int id) {
-        return given()
-                .baseUri(baseUrl)
-                .header("Authorization", "Bearer d86df00b860fd143f8bdb15828c4a6580c31a8f4422316c18d6e433c944f8420")
+    @Step("Delete user by id: {id}")
+    public Response deleteUser(int id) {
+        return baseRequest()
                 .when()
-                .get("/users/" + id);
+                .delete("/users/{id}", id);
     }
 }

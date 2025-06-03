@@ -16,6 +16,9 @@ dependencies {
     testImplementation 'com.fasterxml.jackson.core:jackson-core:2.15.0'
     testImplementation 'com.fasterxml.jackson.core:jackson-databind:2.15.0'
     testImplementation 'com.fasterxml.jackson.core:jackson-annotations:2.15.0'
+    testImplementation 'io.qameta.allure:allure-rest-assured:2.24.0'
+    testImplementation 'io.qameta.allure:allure-junit5:2.24.0'
+
 }
 
 test {

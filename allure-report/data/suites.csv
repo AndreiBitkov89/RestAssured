@@ -1,0 +1,5 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","3228","createNotUniqueUserTest()","","Tue Jun 03 19:13:51 CEST 2025","passed","Tue Jun 03 19:13:54 CEST 2025","","tests.UserTests","tests.UserTests","createNotUniqueUserTest"
+"","1519","getUserTest()","","Tue Jun 03 19:13:56 CEST 2025","passed","Tue Jun 03 19:13:57 CEST 2025","","tests.UserTests","tests.UserTests","getUserTest"
+"","2833","deleteUserTest()","","Tue Jun 03 19:13:57 CEST 2025","passed","Tue Jun 03 19:14:00 CEST 2025","","tests.UserTests","tests.UserTests","deleteUserTest"
+"","1887","createUserTest()","","Tue Jun 03 19:13:54 CEST 2025","passed","Tue Jun 03 19:13:56 CEST 2025","","tests.UserTests","tests.UserTests","createUserTest"
